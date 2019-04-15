@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>3D карта</title>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://js.arcgis.com/4.10/"></script>
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <div id="viewDiv">
+    <div id="infoDiv">
+      <form action="http://heat.uaig.kz">
+        <input class="esri-component esri-widget--button esri-widget esri-interactive"
+          type="submit" id="switch_btn" value="2D" />
+      </form>
+    </div>
+    <div id="goToButton">Вернуть вид карты по умолчанию</div>
+    <div id="cold_panel_back" title="Холодная вода"></div>
+    <div id="heat_panel_back" title="Горячая вода"></div>
+    <div id="cold_panel" class="esri-component esri-popup esri-popup--aligned-top-center esri-popup--shadow">
+      <div class='esri-feature__fields esri-feature__content-element'>
+        <div class="esri-popup__main-container esri-widget esri-popup--is-collapsible">
+          <header class="esri-popup__header">
+            <div class="esri-popup__header-container esri-popup__header-container--button">
+              <h2 class="esri-popup__header-title">Холодная вода</h2>
+            </div>
+            <div class="esri-popup__header-buttons">
+              <div role="button" class="esri-popup__button" aria-label="Закрыть" title="Закрыть">
+                <span id="close1" class="esri-popup__icon esri-icon-close"></span>
+              </div>
+            </div>
+          </header>
+          <article class="esri-popup__content">
+            <div>
+              <div class="esri-feature esri-widget">
+                <div class="esri-feature__size-container">
+                  <div class="esri-feature__main-container">
+                    <div>
+                      <div class="esri-feature__fields esri-feature__content-element">
+                        <table class='esri-widget__table' summary='Список атрибутов и значений'>
+                          <tbody id="table_cold">
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div id="heat_panel" class="esri-component esri-popup esri-popup--aligned-top-center esri-popup--shadow">
+      <div class='esri-feature__fields esri-feature__content-element'>
+        <div class="esri-popup__main-container esri-widget esri-popup--is-collapsible">
+          <header class="esri-popup__header">
+            <div class="esri-popup__header-container esri-popup__header-container--button">
+              <h2 class="esri-popup__header-title">Горячая вода</h2>
+            </div>
+            <div class="esri-popup__header-buttons">
+              <div role="button" class="esri-popup__button" aria-label="Закрыть" title="Закрыть">
+                <span id="close2" class="esri-popup__icon esri-icon-close"></span>
+              </div>
+            </div>
+          </header>
+          <article class="esri-popup__content">
+            <div>
+              <div class="esri-feature esri-widget">
+                <div class="esri-feature__size-container">
+                  <div class="esri-feature__main-container">
+                    <div>
+                      <div class="esri-feature__fields esri-feature__content-element">
+                        <table class='esri-widget__table' summary='Список атрибутов и значений'>
+                          <tbody id="table_heat">
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div id="main_loading">
+      <div class="cssload-thecube">
+        <div class="cssload-cube cssload-c1"></div>
+        <div class="cssload-cube cssload-c2"></div>
+        <div class="cssload-cube cssload-c4"></div>
+        <div class="cssload-cube cssload-c3"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
